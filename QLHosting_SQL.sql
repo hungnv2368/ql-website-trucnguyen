@@ -45,17 +45,6 @@ Price bigint
 )
 go
 
-
-Hiring
-ID
-CustomerId
-HiringType
-IDType
-HiringDate
-ExpireDate
-Price
-
-
 create table Hiring(
 ID bigint identity primary key,
 CustomerId bigint,

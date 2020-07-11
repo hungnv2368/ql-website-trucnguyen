@@ -192,7 +192,8 @@
             this.Controls.Add(this.gridData);
             this.Controls.Add(this.groupBox1);
             this.Name = "GUI_Hosting";
-            this.Text = "GUI_Hosting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Hosting";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();

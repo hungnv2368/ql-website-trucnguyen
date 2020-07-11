@@ -77,7 +77,7 @@
             this.Controls.Add(this.progressBar1);
             this.Name = "GUI_Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GUI_Splash";
+            this.Text = "Quản lý hosting. Loading ...";
             this.Load += new System.EventHandler(this.GUI_Splash_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
