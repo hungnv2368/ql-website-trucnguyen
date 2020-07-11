@@ -1,6 +1,6 @@
 ﻿namespace GUI_QuanLy
 {
-    partial class GUI_Hosting
+    partial class GUI_Domain
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtHostType = new System.Windows.Forms.TextBox();
+            this.txtDomainType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtHostAdress = new System.Windows.Forms.TextBox();
+            this.txtDomainName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gridData = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,10 +42,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HostAdress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HostType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -55,9 +51,9 @@
             // 
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtHostType);
+            this.groupBox1.Controls.Add(this.txtDomainType);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtHostAdress);
+            this.groupBox1.Controls.Add(this.txtDomainName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -81,28 +77,28 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Giá thuê";
             // 
-            // txtHostType
+            // txtDomainType
             // 
-            this.txtHostType.Location = new System.Drawing.Point(6, 147);
-            this.txtHostType.Name = "txtHostType";
-            this.txtHostType.Size = new System.Drawing.Size(270, 26);
-            this.txtHostType.TabIndex = 3;
+            this.txtDomainType.Location = new System.Drawing.Point(6, 147);
+            this.txtDomainType.Name = "txtDomainType";
+            this.txtDomainType.Size = new System.Drawing.Size(270, 26);
+            this.txtDomainType.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 20);
+            this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Loại host";
+            this.label2.Text = "Loại domain";
             // 
-            // txtHostAdress
+            // txtDomainName
             // 
-            this.txtHostAdress.Location = new System.Drawing.Point(6, 65);
-            this.txtHostAdress.Name = "txtHostAdress";
-            this.txtHostAdress.Size = new System.Drawing.Size(270, 26);
-            this.txtHostAdress.TabIndex = 1;
+            this.txtDomainName.Location = new System.Drawing.Point(6, 65);
+            this.txtDomainName.Name = "txtDomainName";
+            this.txtDomainName.Size = new System.Drawing.Size(270, 26);
+            this.txtDomainName.TabIndex = 1;
             // 
             // label1
             // 
@@ -111,18 +107,13 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Địa chỉ host";
+            this.label1.Text = "Tên domain";
             // 
             // gridData
             // 
             this.gridData.AllowUserToAddRows = false;
             this.gridData.AllowUserToDeleteRows = false;
             this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.HostAdress,
-            this.HostType,
-            this.Price});
             this.gridData.Location = new System.Drawing.Point(310, 122);
             this.gridData.Name = "gridData";
             this.gridData.ReadOnly = true;
@@ -192,36 +183,7 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // HostAdress
-            // 
-            this.HostAdress.DataPropertyName = "HostAdress";
-            this.HostAdress.HeaderText = "Địa chỉ host";
-            this.HostAdress.Name = "HostAdress";
-            this.HostAdress.ReadOnly = true;
-            // 
-            // HostType
-            // 
-            this.HostType.DataPropertyName = "HostType";
-            this.HostType.HeaderText = "Loại host";
-            this.HostType.Name = "HostType";
-            this.HostType.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá thuê";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // GUI_Hosting
+            // GUI_Domain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,9 +191,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gridData);
             this.Controls.Add(this.groupBox1);
-            this.Name = "GUI_Hosting";
+            this.Name = "GUI_Domain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hosting";
+            this.Text = "Domain";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
@@ -247,9 +209,9 @@
         private System.Windows.Forms.DataGridView gridData;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtHostAdress;
+        private System.Windows.Forms.TextBox txtDomainName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtHostType;
+        private System.Windows.Forms.TextBox txtDomainType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnAdd;
@@ -257,9 +219,5 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HostAdress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HostType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

@@ -22,5 +22,11 @@ namespace GUI_QuanLy
             var hostingForm = new GUI_Hosting();
             hostingForm.Show();
         }
+
+        private void domainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var domainForm = new GUI_Domain();
+            domainForm.Show();
+        }
     }
 }

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI_Domain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Domain.Designer.cs">
+      <DependentUpon>GUI_Domain.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Hosting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI_Domain.resx">
+      <DependentUpon>GUI_Domain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Hosting.resx">
       <DependentUpon>GUI_Hosting.cs</DependentUpon>
     </EmbeddedResource>
