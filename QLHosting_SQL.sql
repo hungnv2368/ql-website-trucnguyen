@@ -3,13 +3,9 @@ UserId bigint identity primary key,
 MaNguoiDung varchar(20),
 HoTen nvarchar(200),
 NgaySinh date,
-GioiTinh nvarchar(10),
 SoDT varchar(15),
 DiaChi nvarchar(300),
 Email varchar(50),
-CMTND varchar(20),
-TheATM varchar(20),
-QuocTich nvarchar(100),
 UserType nvarchar(10),
 BoPhan nvarchar(100) --NV,KH
 )
@@ -19,8 +15,7 @@ create table TaiKhoan(
 UserId bigint primary key,
 UserName varchar(20),
 Password varchar(50) default '1111',
-Quyen int default 0,
-constraint b foreign key (UserId) references NguoiDung(UserId) 
+Quyen int default 0
 )
 go
 
@@ -51,32 +46,32 @@ Price bigint
 go
 
 
+Hiring
+ID
+CustomerId
+HiringType
+IDType
+HiringDate
+ExpireDate
+Price
 
 
-create table DatVe(
-IdVe bigint identity primary key,
-MaVe varchar(20),
-IdTour int,
-UserId bigint,
-SoNguoi int,
-GiaVe decimal(22,6),
-NgayDatVe date,
-constraint i foreign key (UserId) references NguoiDung(UserId),
-constraint e foreign key (IdTour) references Tour(IdTour) 
+create table Hiring(
+ID bigint identity primary key,
+CustomerId bigint,
+HiringType nvarchar(50), -- web/domain/hosting
+IDType bigint,
+HiringDate datetime,
+ExpireDate datetime,
+Price bigint
 )
 go
 
 create table HoaDon(
-IdHoaDon bigint identity primary key,
-IdVe bigint,
-UserIdKhachHang bigint,
-UserIdNV bigint,
-NgayThanhToan datetime,
-TongTien decimal(22,6),
-MaHD varchar(20),
-constraint f foreign key (IdVe) references DatVe(IdVe), 
-constraint g foreign key (UserIdKhachHang) references NguoiDung(UserId),
-constraint h foreign key (UserIdNV) references NguoiDung(UserId)
+ID bigint identity primary key,
+HiringId bigint,
+InvoiceType nvarchar(50), //Host/Domain/Web
+Price bigint
 )
 go
 
