@@ -12,7 +12,7 @@ namespace DAL_QuanLy
         public bool Insert(DTO_QuanLy.DTO_Website data)
         {
             string query = string.Format("INSERT Website(WebType,WebAdress," +
-                "HostID,DomainID,Price)VALUES(N'{0}',N'{1}','{2}')", data.WebType,
+                "HostID,DomainID,Price)VALUES(N'{0}',N'{1}','{2}','{3}','{4}')", data.WebType,
                 data.WebAdress, data.HostID,data.DomainID,data.Price);
 
             int result = DAL_DBConnect.Instance.ExecuteNonQuery(query);

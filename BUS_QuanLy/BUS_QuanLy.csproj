@@ -52,6 +52,7 @@
     <Compile Include="BUS_Domain.cs" />
     <Compile Include="BUS_Hosting.cs" />
     <Compile Include="BUS_TaiKhoan.cs" />
+    <Compile Include="BUS_Website.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

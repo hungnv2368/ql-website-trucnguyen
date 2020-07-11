@@ -1,6 +1,6 @@
 ﻿namespace GUI_QuanLy
 {
-    partial class GUI_Domain
+    partial class GUI_Website
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDomainType = new System.Windows.Forms.TextBox();
+            this.txtWebsiteType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDomainName = new System.Windows.Forms.TextBox();
+            this.txtWebsiteName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gridData = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,10 +42,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DomainName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DomainType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbHosting = new System.Windows.Forms.ComboBox();
+            this.cbDomain = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -53,11 +53,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDomain);
+            this.groupBox1.Controls.Add(this.cbHosting);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtDomainType);
+            this.groupBox1.Controls.Add(this.txtWebsiteType);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDomainName);
+            this.groupBox1.Controls.Add(this.txtWebsiteName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -67,7 +71,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(6, 237);
+            this.txtPrice.Location = new System.Drawing.Point(6, 397);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(270, 26);
             this.txtPrice.TabIndex = 5;
@@ -75,54 +79,49 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 192);
+            this.label3.Location = new System.Drawing.Point(7, 352);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Giá thuê";
             // 
-            // txtDomainType
+            // txtWebsiteType
             // 
-            this.txtDomainType.Location = new System.Drawing.Point(6, 147);
-            this.txtDomainType.Name = "txtDomainType";
-            this.txtDomainType.Size = new System.Drawing.Size(270, 26);
-            this.txtDomainType.TabIndex = 3;
+            this.txtWebsiteType.Location = new System.Drawing.Point(6, 147);
+            this.txtWebsiteType.Name = "txtWebsiteType";
+            this.txtWebsiteType.Size = new System.Drawing.Size(270, 26);
+            this.txtWebsiteType.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Loại domain";
+            this.label2.Text = "Loại website";
             // 
-            // txtDomainName
+            // txtWebsiteName
             // 
-            this.txtDomainName.Location = new System.Drawing.Point(6, 65);
-            this.txtDomainName.Name = "txtDomainName";
-            this.txtDomainName.Size = new System.Drawing.Size(270, 26);
-            this.txtDomainName.TabIndex = 1;
+            this.txtWebsiteName.Location = new System.Drawing.Point(6, 65);
+            this.txtWebsiteName.Name = "txtWebsiteName";
+            this.txtWebsiteName.Size = new System.Drawing.Size(270, 26);
+            this.txtWebsiteName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên domain";
+            this.label1.Text = "Tên website";
             // 
             // gridData
             // 
             this.gridData.AllowUserToAddRows = false;
             this.gridData.AllowUserToDeleteRows = false;
             this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.DomainName,
-            this.DomainType,
-            this.Price});
             this.gridData.Location = new System.Drawing.Point(310, 122);
             this.gridData.Name = "gridData";
             this.gridData.ReadOnly = true;
@@ -192,36 +191,41 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // ID
+            // label4
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Domain";
             // 
-            // DomainName
+            // label5
             // 
-            this.DomainName.DataPropertyName = "DomainName";
-            this.DomainName.HeaderText = "Tên domain";
-            this.DomainName.Name = "DomainName";
-            this.DomainName.ReadOnly = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Hosting";
             // 
-            // DomainType
+            // cbHosting
             // 
-            this.DomainType.DataPropertyName = "DomainType";
-            this.DomainType.HeaderText = "Loại domain";
-            this.DomainType.Name = "DomainType";
-            this.DomainType.ReadOnly = true;
+            this.cbHosting.FormattingEnabled = true;
+            this.cbHosting.Location = new System.Drawing.Point(11, 231);
+            this.cbHosting.Name = "cbHosting";
+            this.cbHosting.Size = new System.Drawing.Size(265, 28);
+            this.cbHosting.TabIndex = 10;
             // 
-            // Price
+            // cbDomain
             // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá thuê";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
+            this.cbDomain.FormattingEnabled = true;
+            this.cbDomain.Location = new System.Drawing.Point(11, 315);
+            this.cbDomain.Name = "cbDomain";
+            this.cbDomain.Size = new System.Drawing.Size(260, 28);
+            this.cbDomain.TabIndex = 11;
             // 
-            // GUI_Domain
+            // GUI_Website
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,9 +233,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gridData);
             this.Controls.Add(this.groupBox1);
-            this.Name = "GUI_Domain";
+            this.Name = "GUI_Website";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Domain";
+            this.Text = "Website";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
@@ -247,9 +251,9 @@
         private System.Windows.Forms.DataGridView gridData;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDomainName;
+        private System.Windows.Forms.TextBox txtWebsiteName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDomainType;
+        private System.Windows.Forms.TextBox txtWebsiteType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnAdd;
@@ -257,9 +261,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DomainName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DomainType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbHosting;
+        private System.Windows.Forms.ComboBox cbDomain;
     }
 }
