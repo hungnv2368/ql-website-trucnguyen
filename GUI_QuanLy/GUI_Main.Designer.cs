@@ -34,7 +34,7 @@
             this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.choThueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -49,7 +49,7 @@
             this.websiteToolStripMenuItem,
             this.customerToolStripMenuItem,
             this.staffToolStripMenuItem,
-            this.invoiceToolStripMenuItem,
+            this.choThueToolStripMenuItem,
             this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -83,18 +83,21 @@
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(108, 28);
             this.customerToolStripMenuItem.Text = "Khách hàng";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // staffToolStripMenuItem
             // 
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
             this.staffToolStripMenuItem.Size = new System.Drawing.Size(95, 28);
             this.staffToolStripMenuItem.Text = "Nhân viên";
+            this.staffToolStripMenuItem.Click += new System.EventHandler(this.staffToolStripMenuItem_Click);
             // 
-            // invoiceToolStripMenuItem
+            // choThueToolStripMenuItem
             // 
-            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
-            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(84, 28);
-            this.invoiceToolStripMenuItem.Text = "Hóa đơn";
+            this.choThueToolStripMenuItem.Name = "choThueToolStripMenuItem";
+            this.choThueToolStripMenuItem.Size = new System.Drawing.Size(88, 28);
+            this.choThueToolStripMenuItem.Text = "Cho thuê";
+            this.choThueToolStripMenuItem.Click += new System.EventHandler(this.choThueToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
@@ -138,8 +141,8 @@
         private System.Windows.Forms.ToolStripMenuItem websiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem invoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem choThueToolStripMenuItem;
     }
 }

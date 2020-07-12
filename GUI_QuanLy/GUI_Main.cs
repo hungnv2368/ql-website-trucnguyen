@@ -34,5 +34,23 @@ namespace GUI_QuanLy
             var domainForm = new GUI_Website();
             domainForm.Show();
         }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var domainForm = new GUI_KhachHang();
+            domainForm.Show();
+        }
+
+        private void staffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var domainForm = new GUI_NhanVien();
+            domainForm.Show();
+        }
+
+        private void choThueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var domainForm = new GUI_ChoThue();
+            domainForm.Show();
+        }
     }
 }

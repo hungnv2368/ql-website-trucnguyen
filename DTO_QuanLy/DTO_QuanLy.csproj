@@ -42,12 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO_ChoThue.cs" />
     <Compile Include="DTO_Domain.cs" />
     <Compile Include="DTO_HoaDon.cs" />
     <Compile Include="DTO_Hosting.cs" />
     <Compile Include="DTO_KhachHang.cs" />
     <Compile Include="DTO_NhanVien.cs" />
-    <Compile Include="DTO_TaiKhoan.cs" />
     <Compile Include="DTO_Website.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,21 +1,22 @@
-﻿create table NguoiDung(
-UserId bigint identity primary key,
-MaNguoiDung varchar(20),
+﻿create table KhachHang(
+ID bigint identity primary key,
+MaKH varchar(20),
 HoTen nvarchar(200),
 NgaySinh date,
 SoDT varchar(15),
 DiaChi nvarchar(300),
-Email varchar(50),
-UserType nvarchar(10),
-BoPhan nvarchar(100) --NV,KH
+Email varchar(50)
 )
 go
-
-create table TaiKhoan(
-UserId bigint primary key,
+create table NhanVien(
+ID bigint identity primary key,
+MaNV varchar(20),
+HoTen nvarchar(200),
+NgaySinh date,
+SoDT varchar(15),
 UserName varchar(20),
 Password varchar(50) default '1111',
-Quyen int default 0
+Quyen nvarchar(20)  --  Nhân viên,Quản lý
 )
 go
 
@@ -48,7 +49,7 @@ go
 create table Hiring(
 ID bigint identity primary key,
 CustomerId bigint,
-HiringType nvarchar(50), -- web/domain/hosting
+HiringType nvarchar(50),
 IDType bigint,
 HiringDate datetime,
 ExpireDate datetime,
@@ -56,39 +57,18 @@ Price bigint
 )
 go
 
-create table HoaDon(
-ID bigint identity primary key,
-HiringId bigint,
-InvoiceType nvarchar(50), //Host/Domain/Web
-Price bigint
-)
-go
-
-
 --tao stored procedures
 create proc USP_Login
 @iduser varchar(20),
 @password varchar(50)
 as
 begin 
-	select * from dbo.taikhoan where UserName = @iduser and password = @password
+	select * from NhanVien where UserName = @iduser and Password = @password
 end
 go
 
---đổi mật khẩu
-create proc USP_UpdateMatKhau @iduser char(10),@password char(10), @newpass char(10)
-as
-begin 
-	update dbo.taikhoan set password = @newpass where UserName = @iduser and password = @password
-end
-go
- 
-exec USP_UpdateMatKhau @iduser = 'user1', @password ='user1',  @newpass = 'user'
-
-insert into dbo.taikhoan ( UserId,UserName,password , quyen) values(1,'admin','1',2)
-insert into dbo.taikhoan (UserId,UserName,password , quyen) values(2,'admin1','1',1)
-insert into dbo.taikhoan (UserId,UserName,password , quyen) values(3,'chinh','1',0)
-insert into dbo.taikhoan ( UserId,UserName,password , quyen) values(4,'minh','1',0)
+insert into NhanVien (MaNV,HoTen,UserName,Password,Quyen) values('NV001',N'Truc Nguyen Admin','admin','1',N'Quản lý')
+insert into NhanVien (MaNV,HoTen,UserName,Password,Quyen) values('NV002',N'Truc Nguyen User','user1','1',N'Nhân viên')
 
 
 

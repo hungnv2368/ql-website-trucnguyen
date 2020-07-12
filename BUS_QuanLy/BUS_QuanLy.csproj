@@ -49,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_ChoThue.cs" />
     <Compile Include="BUS_Domain.cs" />
     <Compile Include="BUS_Hosting.cs" />
-    <Compile Include="BUS_TaiKhoan.cs" />
+    <Compile Include="BUS_KhachHang.cs" />
+    <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_Website.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -43,14 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ChoThue.cs" />
     <Compile Include="DAL_Domain.cs" />
     <Compile Include="DAL_Website.cs" />
     <Compile Include="DAO_HoaDon.cs" />
-    <Compile Include="DAO_KhachHang.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_Hosting.cs" />
-    <Compile Include="DAO_NhanVien.cs" />
+    <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_DBConnect.cs" />
-    <Compile Include="DAL_TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

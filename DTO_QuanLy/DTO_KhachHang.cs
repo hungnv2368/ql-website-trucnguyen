@@ -13,18 +13,12 @@ namespace DTO_QuanLy
         {
 
         }
-        public long UserId { get; set; }
-        public string MaNguoiDung { get; set; }
+        public long ID { get; set; }
+        public string MaKH { get; set; }
         public string HoTen { get; set; }
         public DateTime NgaySinh { get; set; }
-        public string GioiTinh { get; set; }
         public string SoDT { get; set; }
         public string DiaChi  { get; set; }
         public string Email { get; set; }
-        public string CMTND  { get; set; }
-        public string TheATM { get; set; }
-        public string QuocTich { get; set; }
-        public string UserType { get; set; }
-        public string BoPhan { get; set; }
     }
 }

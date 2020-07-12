@@ -50,6 +50,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consts.cs" />
+    <Compile Include="GUI_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_NhanVien.Designer.cs">
+      <DependentUpon>GUI_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_KhachHang.Designer.cs">
+      <DependentUpon>GUI_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ChoThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ChoThue.Designer.cs">
+      <DependentUpon>GUI_ChoThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Website.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +107,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI_NhanVien.resx">
+      <DependentUpon>GUI_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_KhachHang.resx">
+      <DependentUpon>GUI_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ChoThue.resx">
+      <DependentUpon>GUI_ChoThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_Website.resx">
       <DependentUpon>GUI_Website.cs</DependentUpon>
     </EmbeddedResource>

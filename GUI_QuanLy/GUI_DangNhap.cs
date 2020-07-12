@@ -11,7 +11,7 @@ namespace GUI_QuanLy
         {
             InitializeComponent();
         }
-        private BUS_TaiKhoan _taikhoanBus = new BUS_TaiKhoan();
+        private BUS_NhanVien _taikhoanBus = new BUS_NhanVien();
        
         private void btn_dangnhap_Click(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace GUI_QuanLy
             var isOk = _taikhoanBus.CheckIsLogin(iduser, password);
             if (isOk)
             {
-                DTO_TaiKhoan loginTaiKhoan = _taikhoanBus.GetTaiKhoanByID(iduser);
+                DTO_NhanVien loginTaiKhoan = _taikhoanBus.GetTaiKhoanByID(iduser);
 
                 GUI_Splash f = new GUI_Splash();
                 this.Hide();
