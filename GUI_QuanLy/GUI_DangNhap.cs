@@ -22,7 +22,7 @@ namespace GUI_QuanLy
             {
                 DTO_NhanVien loginTaiKhoan = _taikhoanBus.GetTaiKhoanByID(iduser);
 
-                GUI_Splash f = new GUI_Splash();
+                GUI_Splash f = new GUI_Splash(loginTaiKhoan);
                 this.Hide();
                 f.ShowDialog();
             }

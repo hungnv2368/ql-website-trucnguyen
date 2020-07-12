@@ -18,7 +18,16 @@ namespace GUI_QuanLy
         {
             InitializeComponent();
         }
-
+        private DTO_QuanLy.DTO_NhanVien _nhanVien;
+        public GUI_Main(DTO_QuanLy.DTO_NhanVien nhanVien) : this()
+        {
+            _nhanVien = nhanVien;
+            if (_nhanVien.Quyen == Consts.NV)
+            {
+                staffToolStripMenuItem.Visible = false;
+                reportToolStripMenuItem.Visible = false;
+            }
+        }
         private void hostingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var hostingForm = new GUI_Hosting();

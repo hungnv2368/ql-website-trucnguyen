@@ -19,13 +19,11 @@ namespace GUI_QuanLy
             timer1.Interval = 1000;
             timer1.Enabled = true;
         }
-        private BUS_QuanLy.BUS_Hosting _hostingBUS = new BUS_QuanLy.BUS_Hosting();
-
-        private void GUI_Splash_Load(object sender, EventArgs e)
+        private DTO_QuanLy.DTO_NhanVien _nhanVien;
+        public GUI_Splash(DTO_QuanLy.DTO_NhanVien nhanVien) : this()
         {
-           
+            _nhanVien = nhanVien;
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             int i;
@@ -40,12 +38,11 @@ namespace GUI_QuanLy
             }
             timer1.Stop();
 
-            GUI_Main f = new GUI_Main();
+            GUI_Main f = new GUI_Main(_nhanVien);
             this.Hide();
             f.ShowDialog();
 
         }
-
         private void GUI_Splash_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
