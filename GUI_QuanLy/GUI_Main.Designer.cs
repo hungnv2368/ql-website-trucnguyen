@@ -36,8 +36,8 @@
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choThueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
             this.thôngTinPhầnMềmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,13 @@
             this.reportToolStripMenuItem.Text = "Báo cáo";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
+            // thôngTinPhầnMềmToolStripMenuItem
+            // 
+            this.thôngTinPhầnMềmToolStripMenuItem.Name = "thôngTinPhầnMềmToolStripMenuItem";
+            this.thôngTinPhầnMềmToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.thôngTinPhầnMềmToolStripMenuItem.Text = "Thông tin phần mềm";
+            this.thôngTinPhầnMềmToolStripMenuItem.Click += new System.EventHandler(this.thôngTinPhầnMềmToolStripMenuItem_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -120,13 +127,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "CHƯƠNG TRÌNH QUẢN LÝ HOSTING";
             // 
-            // thôngTinPhầnMềmToolStripMenuItem
-            // 
-            this.thôngTinPhầnMềmToolStripMenuItem.Name = "thôngTinPhầnMềmToolStripMenuItem";
-            this.thôngTinPhầnMềmToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.thôngTinPhầnMềmToolStripMenuItem.Text = "Thông tin phần mềm";
-            this.thôngTinPhầnMềmToolStripMenuItem.Click += new System.EventHandler(this.thôngTinPhầnMềmToolStripMenuItem_Click);
-            // 
             // GUI_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,10 +135,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GUI_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hosting";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GUI_Main_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -25,8 +25,6 @@ namespace GUI_QuanLy
                 GUI_Splash f = new GUI_Splash();
                 this.Hide();
                 f.ShowDialog();
-                this.Show();
-
             }
             else
             {

@@ -65,5 +65,13 @@ namespace GUI_QuanLy
             var domainForm = new GUI_BaoCao();
             domainForm.Show();
         }
+
+        private void GUI_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

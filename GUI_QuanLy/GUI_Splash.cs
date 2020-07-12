@@ -43,8 +43,12 @@ namespace GUI_QuanLy
             GUI_Main f = new GUI_Main();
             this.Hide();
             f.ShowDialog();
-            this.Show();
 
+        }
+
+        private void GUI_Splash_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
