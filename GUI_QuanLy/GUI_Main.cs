@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -66,11 +67,14 @@ namespace GUI_QuanLy
             domainForm.Show();
         }
 
-        private void GUI_Main_FormClosing(object sender, FormClosingEventArgs e)
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            var diaLog = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel);
+            if (diaLog == DialogResult.OK)
             {
-                e.Cancel = true;
+                Application.Exit();
+                Process.GetCurrentProcess().Kill();
+                return;
             }
         }
     }
