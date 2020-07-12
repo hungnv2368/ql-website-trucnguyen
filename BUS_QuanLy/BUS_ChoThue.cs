@@ -35,5 +35,9 @@ namespace BUS_QuanLy
         {
             return _taiKhoanDAL.TimKiem(str);
         }
+        public DataTable GetListByDateTime(DateTime start, DateTime end)
+        {
+            return _taiKhoanDAL.GetListByDateTime(start, end);
+        }
     }
 }

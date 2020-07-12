@@ -44,8 +44,14 @@ namespace DAL_QuanLy
         {
             var query = string.Format("SELECT * FROM Hiring WHERE (HiringType like '%{0}%' " +
                 "OR CustomerId IN (SELECT ID from KhachHang WHERE MaKH like '%{0}%' OR HoTen like '%{0}%'))", str);
-         
+
             return DAL_DBConnect.Instance.ExecuteQuery(query);
+        }
+        public DataTable GetListByDateTime(DateTime start, DateTime end)
+        {
+            // viet lai cau join
+            return DAL_DBConnect.Instance.ExecuteQuery(String.Format("select MONTH(HiringDate) as 'HMonth', Price " +
+                "FROM Hiring WHERE HiringDate between '{0}' AND '{1}' order by HiringDate", start, end));
         }
     }
 }
