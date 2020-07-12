@@ -26,26 +26,14 @@ namespace DTO_QuanLy
             ID = long.Parse(row["ID"].ToString());
             MaNV = row["MaNV"].ToString();
             HoTen = row["HoTen"].ToString();
-            if (row["NgaySinh"] != null)
+            if (row["NgaySinh"] != null && !string.IsNullOrEmpty(row["NgaySinh"].ToString()))
             {
                 NgaySinh = DateTime.Parse(row["NgaySinh"].ToString());
             }
-            if (row["SoDT"] != null)
-            {
-                SoDT = row["SoDT"].ToString();
-            }
-            if (row["UserName"] != null)
-            {
-                UserName = row["UserName"].ToString();
-            }
-            if (row["Password"] != null)
-            {
-                Password = row["Password"].ToString();
-            }
-            if (row["Quyen"] != null)
-            {
-                Quyen = row["Quyen"].ToString();
-            }
+            SoDT = row["SoDT"].ToString();
+            UserName = row["UserName"].ToString();
+            Password = row["Password"].ToString();
+            Quyen = row["Quyen"].ToString();
         }
     }
 }
