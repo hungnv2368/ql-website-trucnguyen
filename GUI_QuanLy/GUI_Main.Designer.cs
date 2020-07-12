@@ -37,6 +37,7 @@
             this.choThueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.thôngTinPhầnMềmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,79 +51,91 @@
             this.customerToolStripMenuItem,
             this.staffToolStripMenuItem,
             this.choThueToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.thôngTinPhầnMềmToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1111, 32);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(741, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // hostingToolStripMenuItem
             // 
             this.hostingToolStripMenuItem.Name = "hostingToolStripMenuItem";
-            this.hostingToolStripMenuItem.Size = new System.Drawing.Size(78, 28);
+            this.hostingToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.hostingToolStripMenuItem.Text = "Hosting";
             this.hostingToolStripMenuItem.Click += new System.EventHandler(this.hostingToolStripMenuItem_Click);
             // 
             // domainToolStripMenuItem
             // 
             this.domainToolStripMenuItem.Name = "domainToolStripMenuItem";
-            this.domainToolStripMenuItem.Size = new System.Drawing.Size(79, 28);
+            this.domainToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.domainToolStripMenuItem.Text = "Domain";
             this.domainToolStripMenuItem.Click += new System.EventHandler(this.domainToolStripMenuItem_Click);
             // 
             // websiteToolStripMenuItem
             // 
             this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
-            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(82, 28);
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.websiteToolStripMenuItem.Text = "Website";
             this.websiteToolStripMenuItem.Click += new System.EventHandler(this.websiteToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(108, 28);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(82, 22);
             this.customerToolStripMenuItem.Text = "Khách hàng";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // staffToolStripMenuItem
             // 
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
-            this.staffToolStripMenuItem.Size = new System.Drawing.Size(95, 28);
+            this.staffToolStripMenuItem.Size = new System.Drawing.Size(73, 22);
             this.staffToolStripMenuItem.Text = "Nhân viên";
             this.staffToolStripMenuItem.Click += new System.EventHandler(this.staffToolStripMenuItem_Click);
             // 
             // choThueToolStripMenuItem
             // 
             this.choThueToolStripMenuItem.Name = "choThueToolStripMenuItem";
-            this.choThueToolStripMenuItem.Size = new System.Drawing.Size(88, 28);
+            this.choThueToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.choThueToolStripMenuItem.Text = "Cho thuê";
             this.choThueToolStripMenuItem.Click += new System.EventHandler(this.choThueToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(81, 28);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.reportToolStripMenuItem.Text = "Báo cáo";
+            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(282, 264);
+            this.label2.Location = new System.Drawing.Point(188, 172);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(522, 32);
+            this.label2.Size = new System.Drawing.Size(360, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "CHƯƠNG TRÌNH QUẢN LÝ HOSTING";
             // 
+            // thôngTinPhầnMềmToolStripMenuItem
+            // 
+            this.thôngTinPhầnMềmToolStripMenuItem.Name = "thôngTinPhầnMềmToolStripMenuItem";
+            this.thôngTinPhầnMềmToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.thôngTinPhầnMềmToolStripMenuItem.Text = "Thông tin phần mềm";
+            this.thôngTinPhầnMềmToolStripMenuItem.Click += new System.EventHandler(this.thôngTinPhầnMềmToolStripMenuItem_Click);
+            // 
             // GUI_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 584);
+            this.ClientSize = new System.Drawing.Size(741, 380);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GUI_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hosting";
@@ -144,5 +157,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem choThueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLNhanVien.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +51,18 @@ namespace GUI_QuanLy
         private void choThueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var domainForm = new GUI_ChoThue();
+            domainForm.Show();
+        }
+
+        private void thôngTinPhầnMềmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var domainForm = new GUI_ThongTin();
+            domainForm.Show();
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var domainForm = new GUI_BaoCao();
             domainForm.Show();
         }
     }
