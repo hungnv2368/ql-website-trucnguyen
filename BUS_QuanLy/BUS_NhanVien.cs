@@ -32,7 +32,16 @@ namespace BUS_QuanLy
         {
             return _taiKhoanDAL.GetList();
         }
-
+        public List<DTO_NhanVien> GetAll()
+        {
+            var lstDT = _taiKhoanDAL.GetList();
+            var listReturn = new List<DTO_NhanVien>();
+            foreach (DataRow item in lstDT.Rows)
+            {
+                listReturn.Add(new DTO_NhanVien(item));
+            }
+            return listReturn;
+        }
         public bool Update(DTO_QuanLy.DTO_NhanVien data)
         {
             return _taiKhoanDAL.Update(data);

@@ -1,14 +1,17 @@
 ﻿using DTO_QuanLy;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace GUI_QuanLy
 {
     public partial class GUI_NhanVien : Form
@@ -121,6 +124,72 @@ namespace GUI_QuanLy
             }
             var dtTimKiem = _bus.TimKiem(txtSearch.Text);
             gridData.DataSource = dtTimKiem;
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+            // tạo SaveFileDialog để lưu file excel
+            SaveFileDialog dialog = new SaveFileDialog();
+
+            // chỉ lọc ra các file có định dạng Excel
+            dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+
+            // Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = dialog.FileName;
+            }
+
+            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+            if (string.IsNullOrEmpty(filePath))
+            {
+                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                return;
+            }
+
+            try
+            {
+                GenerateExcel(_bus.GetList(), filePath);
+                MessageBox.Show("Xuất excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi lưu file! " + ex.ToString());
+            }
+        }
+        public static void GenerateExcel(DataTable dataTable, string path)
+        {
+
+            DataSet dataSet = new DataSet();
+            dataSet.Tables.Add(dataTable);
+            // create a excel app along side with workbook and worksheet and give a name to it
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook excelWorkBook = excelApp.Workbooks.Add();
+            Excel._Worksheet xlWorksheet = excelWorkBook.Sheets[1];
+            Excel.Range xlRange = xlWorksheet.UsedRange;
+            foreach (DataTable table in dataSet.Tables)
+            {
+                //Add a new worksheet to workbook with the Datatable name
+                Excel.Worksheet excelWorkSheet = excelWorkBook.Sheets.Add();
+                excelWorkSheet.Name = table.TableName;
+                // add all the columns
+                for (int i = 1; i < table.Columns.Count + 1; i++)
+                {
+                    excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
+                }
+                // add all the rows
+                for (int j = 0; j < table.Rows.Count; j++)
+                {
+                    for (int k = 0; k < table.Columns.Count; k++)
+                    {
+                        excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
+                    }
+                }
+            }
+            excelWorkBook.SaveAs(path); // -> this will do the custom
+            excelWorkBook.Close();
+            excelApp.Quit();
         }
     }
 }
