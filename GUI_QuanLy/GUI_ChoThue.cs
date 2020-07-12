@@ -16,7 +16,7 @@ namespace GUI_QuanLy
         {
             InitializeComponent();
             LoadData();
-
+            cbLoaiThue.SelectedIndex = 0;
         }
         private BUS_QuanLy.BUS_ChoThue _bus = new BUS_QuanLy.BUS_ChoThue();
         private BUS_QuanLy.BUS_KhachHang _busKhachHang = new BUS_QuanLy.BUS_KhachHang();
@@ -57,7 +57,7 @@ namespace GUI_QuanLy
             var _hostingDTO = new DTO_QuanLy.DTO_ChoThue()
             {
                 CustomerId = long.Parse(cbKhachHang.SelectedValue.ToString()),
-                HiringType = cbLoaiThue.SelectedText,
+                HiringType = cbLoaiThue.Text,
                 IDType = long.Parse(cbIDThue.SelectedValue.ToString()),
                 HiringDate = dateTimeNgayThue.Value,
                 ExpireDate = dateTimeNgayHetHan.Value,
@@ -66,11 +66,11 @@ namespace GUI_QuanLy
             var isOk = _bus.Insert(_hostingDTO);
             if (isOk)
             {
-                MessageBox.Show("Them moi thanh cong");
+                MessageBox.Show("Thêm mới thành công!");
             }
             else
             {
-                MessageBox.Show("Them moi loi");
+                MessageBox.Show("Thêm mới không thành công");
             }
             LoadData();
         }
@@ -81,7 +81,7 @@ namespace GUI_QuanLy
             if (indexrow < 0) return;
             _id = int.Parse(gridData.Rows[indexrow].Cells[0].Value.ToString());
             cbKhachHang.SelectedValue = long.Parse(gridData.Rows[indexrow].Cells[1].Value.ToString());
-            cbLoaiThue.SelectedText = gridData.Rows[indexrow].Cells[2].Value.ToString();
+            cbLoaiThue.Text = gridData.Rows[indexrow].Cells[2].Value.ToString();
             cbLoaiThue_TextChanged(sender, e);
             cbIDThue.SelectedValue = long.Parse(gridData.Rows[indexrow].Cells[3].Value.ToString());
             dateTimeNgayThue.Value = DateTime.Parse(gridData.Rows[indexrow].Cells[4].Value.ToString());
@@ -93,13 +93,13 @@ namespace GUI_QuanLy
         {
             if (_id == 0)
             {
-                MessageBox.Show("Chua chon ban ghi de sua");
+                MessageBox.Show("Chưa chọn bản ghi để sửa");
                 return;
             }
             var _hostingDTO = new DTO_QuanLy.DTO_ChoThue()
             {
                 CustomerId = long.Parse(cbKhachHang.SelectedValue.ToString()),
-                HiringType = cbLoaiThue.SelectedText,
+                HiringType = cbLoaiThue.Text,
                 IDType = long.Parse(cbIDThue.SelectedValue.ToString()),
                 HiringDate = dateTimeNgayThue.Value,
                 ExpireDate = dateTimeNgayHetHan.Value,
@@ -109,11 +109,11 @@ namespace GUI_QuanLy
             var isOk = _bus.Update(_hostingDTO);
             if (isOk)
             {
-                MessageBox.Show("Cap nhat thanh cong");
+                MessageBox.Show("Cập nhật thành công");
             }
             else
             {
-                MessageBox.Show("Cap nhat loi");
+                MessageBox.Show("Cập nhật không thành công");
             }
             LoadData();
         }
@@ -122,17 +122,17 @@ namespace GUI_QuanLy
         {
             if (_id == 0)
             {
-                MessageBox.Show("Chua chon ban ghi de xoa");
+                MessageBox.Show("Chưa chọn bản ghi để xóa");
                 return;
             }
             var isOk = _bus.Delete(_id);
             if (isOk)
             {
-                MessageBox.Show("Xoa thanh cong");
+                MessageBox.Show("Xóa thành công");
             }
             else
             {
-                MessageBox.Show("Xoa loi");
+                MessageBox.Show("Xóa không thành công");
             }
             LoadData();
         }

@@ -30,7 +30,7 @@ namespace DAL_QuanLy
         public bool Update(DTO_KhachHang dtKhachHang)
         {
             string query = string.Format("UPDATE KhachHang SET MaKH = N'{0}',HoTen=N'{1}',NgaySinh='{2}',SoDT=N'{3}'" +
-                ",DiaChi=N'{4}',Email=N'{5}' WHERE ID='{10}'",
+                ",DiaChi=N'{4}',Email=N'{5}' WHERE ID='{6}'",
                 dtKhachHang.MaKH,
                 dtKhachHang.HoTen, dtKhachHang.NgaySinh,dtKhachHang.SoDT,
                 dtKhachHang.DiaChi, dtKhachHang.Email, dtKhachHang.ID);

@@ -33,11 +33,11 @@ namespace GUI_QuanLy
             var isOk = _hostingBUS.Insert(_hostingDTO);
             if (isOk)
             {
-                MessageBox.Show("Them moi thanh cong");
+                MessageBox.Show("Thêm mới thành công!");
             }
             else
             {
-                MessageBox.Show("Them moi loi");
+                MessageBox.Show("Thêm mới không thành công");
             }
             LoadData();
         }
@@ -56,7 +56,7 @@ namespace GUI_QuanLy
         {
             if (_id == 0)
             {
-                MessageBox.Show("Chua chon ban ghi de sua");
+                MessageBox.Show("Chưa chọn bản ghi để sửa");
                 return;
             }
             var _hostingDTO = new DTO_QuanLy.DTO_Hosting()
@@ -69,11 +69,11 @@ namespace GUI_QuanLy
             var isOk = _hostingBUS.Update(_hostingDTO);
             if (isOk)
             {
-                MessageBox.Show("Cap nhat thanh cong");
+                MessageBox.Show("Cập nhật thành công");
             }
             else
             {
-                MessageBox.Show("Cap nhat loi");
+                MessageBox.Show("Cập nhật không thành công");
             }
             LoadData();
         }
@@ -82,17 +82,17 @@ namespace GUI_QuanLy
         {
             if (_id == 0)
             {
-                MessageBox.Show("Chua chon ban ghi de xoa");
+                MessageBox.Show("Chưa chọn bản ghi để xóa");
                 return;
             }
             var isOk = _hostingBUS.Delete(_id);
             if (isOk)
             {
-                MessageBox.Show("Xoa thanh cong");
+                MessageBox.Show("Xóa thành công");
             }
             else
             {
-                MessageBox.Show("Xoa loi");
+                MessageBox.Show("Xóa không thành công");
             }
             LoadData();
         }

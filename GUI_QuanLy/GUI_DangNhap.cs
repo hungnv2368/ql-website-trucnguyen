@@ -30,7 +30,7 @@ namespace GUI_QuanLy
             }
             else
             {
-                MessageBox.Show("Dang nhap khong thanh cong. Kiem tra lai");
+                MessageBox.Show("Đăng nhập không thành công. Kiểm tra lại");
             }
         }
 

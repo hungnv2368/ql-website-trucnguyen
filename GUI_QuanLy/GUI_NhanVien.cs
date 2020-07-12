@@ -34,16 +34,16 @@ namespace GUI_QuanLy
                 NgaySinh = datePickerNgaySinh.Value,
                 UserName = txtUserName.Text,
                 Password = txtPassword.Text,
-                Quyen = comboQuyen.SelectedText
+                Quyen = comboQuyen.Text
             };
             var isOk = _bus.Insert(_hostingDTO);
             if (isOk)
             {
-                MessageBox.Show("Them moi thanh cong");
+                MessageBox.Show("Thêm mới thành công!");
             }
             else
             {
-                MessageBox.Show("Them moi loi");
+                MessageBox.Show("Thêm mới không thành công");
             }
             LoadData();
         }
@@ -55,18 +55,19 @@ namespace GUI_QuanLy
             _id = int.Parse(gridData.Rows[indexrow].Cells[0].Value.ToString());
             txtMaNV.Text = gridData.Rows[indexrow].Cells[1].Value.ToString();
             txtHoTen.Text = gridData.Rows[indexrow].Cells[2].Value.ToString();
-            datePickerNgaySinh.Value = DateTime.Parse(gridData.Rows[indexrow].Cells[3].Value.ToString());
+            if (!string.IsNullOrEmpty(gridData.Rows[indexrow].Cells[3].Value.ToString()))
+                datePickerNgaySinh.Value = DateTime.Parse(gridData.Rows[indexrow].Cells[3].Value.ToString());
             txtSoDT.Text = gridData.Rows[indexrow].Cells[4].Value.ToString();
             txtUserName.Text = gridData.Rows[indexrow].Cells[5].Value.ToString();
             txtPassword.Text = gridData.Rows[indexrow].Cells[6].Value.ToString();
-            comboQuyen.SelectedText = gridData.Rows[indexrow].Cells[7].Value.ToString();
+            comboQuyen.Text = gridData.Rows[indexrow].Cells[7].Value.ToString();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (_id == 0)
             {
-                MessageBox.Show("Chua chon ban ghi de sua");
+                MessageBox.Show("Chưa chọn bản ghi để sửa");
                 return;
             }
             var _hostingDTO = new DTO_QuanLy.DTO_NhanVien()
@@ -77,17 +78,17 @@ namespace GUI_QuanLy
                 NgaySinh = datePickerNgaySinh.Value,
                 UserName = txtUserName.Text,
                 Password = txtPassword.Text,
-                Quyen = comboQuyen.SelectedText,
+                Quyen = comboQuyen.Text,
                 ID = _id
             };
             var isOk = _bus.Update(_hostingDTO);
             if (isOk)
             {
-                MessageBox.Show("Cap nhat thanh cong");
+                MessageBox.Show("Cập nhật thành công");
             }
             else
             {
-                MessageBox.Show("Cap nhat loi");
+                MessageBox.Show("Cập nhật không thành công");
             }
             LoadData();
         }
@@ -96,17 +97,17 @@ namespace GUI_QuanLy
         {
             if (_id == 0)
             {
-                MessageBox.Show("Chua chon ban ghi de xoa");
+                MessageBox.Show("Chưa chọn bản ghi để xóa");
                 return;
             }
             var isOk = _bus.Delete(_id);
             if (isOk)
             {
-                MessageBox.Show("Xoa thanh cong");
+                MessageBox.Show("Xóa thành công");
             }
             else
             {
-                MessageBox.Show("Xoa loi");
+                MessageBox.Show("Xóa không thành công");
             }
             LoadData();
         }

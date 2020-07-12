@@ -12,7 +12,7 @@ namespace DAL_QuanLy
         public bool Insert(DTO_QuanLy.DTO_ChoThue data)
         {
             string query = string.Format("INSERT Hiring(CustomerId,HiringType," +
-                "IDType,HiringDate,ExpireDate,Price)VALUES(N'{0}',N'{1}','{2}','{3}','{4}')", data.CustomerId,
+                "IDType,HiringDate,ExpireDate,Price) VALUES(N'{0}',N'{1}','{2}','{3}','{4}','{5}')", data.CustomerId,
                 data.HiringType, data.IDType, data.HiringDate, data.ExpireDate, data.Price);
 
             int result = DAL_DBConnect.Instance.ExecuteNonQuery(query);
